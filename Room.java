@@ -1,27 +1,34 @@
-public abstract class Room {
-    Room(){
-        setRoom("big");
-        setRoomNo(1);
-        setWeightRange(30, 100);
-        setCapacity(5);
+public class Room {
+    // Constructor
+    Room(int room_no,double room_wrl, double room_wrr,int capacity,String size, boolean isAqua ){
+        setRoomSize(size);
+        setRoomNo(room_no);
+        setWeightRange(room_wrl, room_wrr);
+        setCapacity(capacity);
+        this.isAquiriumRoom = isAqua;
     }
+
+    // Class Members
     public String size;
     public int room_no;
-    public int permissible_start_weight;
-    public int permissible_end_weight;
+    public double permissible_start_weight;
+    public double permissible_end_weight;
 
     public int totalcapacity;
     public int available_capacity;
 
+    boolean isAquiriumRoom;
 
-    public void setRoom(String room_size){
 
+    public void setRoomSize(String room_size){
+        this.size = room_size;
     }
+
     public void setRoomNo(int room_no){
-
+        this.room_no = room_no;
     }
 
-    public void setWeightRange(int a, int b){
+    public void setWeightRange(double a, double b){
         this.permissible_start_weight = a;
         this.permissible_end_weight = b;
     }
